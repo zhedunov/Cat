@@ -20,6 +20,19 @@ public class Cat
         count = count + 1;
     }
 
+    public Cat(double weght) //конструктор с начальным весом
+    {
+        super();
+        this.weight = weght;
+    }
+
+    public Cat copy(Cat cat) //глубокая копия
+    {
+        Cat newCat = new Cat(cat.weight);
+        count = count + 1;
+        return newCat;
+    }
+
     public void meow()
     {
         weight = weight - 1;
@@ -27,7 +40,6 @@ public class Cat
         if ((getStatus() == "Dead") || (getStatus() == "Exploded")) {
             count = count - 1;
         }
-
     }
 
     public void poop() //"Сходить в туалет"
@@ -49,7 +61,8 @@ public class Cat
         }
     }
 
-    public void drink(Double amount) {
+    public void drink(Double amount)
+    {
         weight = weight + amount;
         if ((getStatus() == "Dead") || (getStatus() == "Exploded")) {
             count = count - 1;
@@ -77,11 +90,13 @@ public class Cat
         }
     }
 
-    public Double getTheWholeFoodEaten(){
+    public Double getTheWholeFoodEaten()
+    {
         return theWholeFoodEaten;
     }
 
-    public static int getCount(){
+    public static int getCount()
+    {
         return Cat.count;
     }
 }
